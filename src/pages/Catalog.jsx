@@ -135,59 +135,6 @@ const Catalog = () => {
 	const filterRef = useRef(null);
 
 	const showHideFilter = () => filterRef.current.classList.toggle('active');
-	const listCategory_v1 = [
-		{
-			id: 7,
-			name: 'Áo Nữ',
-			description: 'Áo nữ chất lượng cao',
-			childs: [
-				{
-					id: 1,
-					name: 'Áo Thun',
-					description: 'Áo thun chất lượng cao',
-				},
-				{
-					id: 2,
-					name: 'Áo Phông',
-					description: 'Áo phông chất lượng cao',
-				},
-			],
-		},
-		{
-			id: 8,
-			name: 'Quần Nữ',
-			description: 'Quần nữ chất lượng cao',
-			childs: [
-				{
-					id: 1,
-					name: 'Quần Jean',
-					description: 'Quần jean chất lượng cao',
-				},
-				{
-					id: 2,
-					name: 'Quần shot',
-					description: 'Quần shot chất lượng cao',
-				},
-			],
-		},
-		{
-			id: 13,
-			name: 'Váy Nữ',
-			description: 'Váy nữ chất lượng cao',
-			childs: [
-				{
-					id: 1,
-					name: 'Váy ',
-					description: 'Quần jean chất lượng cao',
-				},
-				{
-					id: 2,
-					name: 'Quần shot',
-					description: 'Quần shot chất lượng cao',
-				},
-			],
-		},
-	];
 	return (
 		<Helmet title='Sản phẩm'>
 			<div className='catalog__top'>
@@ -217,10 +164,6 @@ const Catalog = () => {
 						<div className='catalog__filter__widget__title'>
 							danh mục sản phẩm
 						</div>
-						{/* {listCategory_v1?.map((item, index) => (
-							<NavbarCategory items={item} key={index} />
-						))} */}
-						<NavbarCategory items={listCategory_v1} />
 						<div className='catalog__filter__widget__content'>
 							{categoryList?.items?.length
 								? categoryList?.items?.map((item, index) => (
@@ -241,7 +184,7 @@ const Catalog = () => {
 						</div>
 					</div>
 					<div className='catalog__filter__widget'>
-						<div className='catalog__filter__widget__title'>kích cỡ</div>
+						<div className='catalog__filter__widget__title'>màu sắc</div>
 						<div className='catalog__filter__widget__content'>
 							{colorList?.items?.length
 								? colorList?.items?.map((item, index) => (
@@ -261,28 +204,6 @@ const Catalog = () => {
 								: ''}
 						</div>
 					</div>
-
-					{/* <div className='catalog__filter__widget'>
-						<div className='catalog__filter__widget__title'>kích cỡ</div>
-						<div className='catalog__filter__widget__content'>
-							{sizeList?.items?.length
-								? sizeList?.items?.map((item, index) => (
-										<div
-											key={index}
-											className='catalog__filter__widget__content__item'
-										>
-											<CheckBox
-												label={item.name}
-												onChange={(input) =>
-													filterSelect('SIZE', input.checked, item)
-												}
-												checked={filter.sizes.includes(item.name)}
-											/>
-										</div>
-								  ))
-								: ''}
-						</div>
-					</div> */}
 					<div className='catalog__filter__widget'>
 						<div className='catalog__filter__widget__title'>kích cỡ</div>
 						<div className='catalog__filter__widget__content'>
